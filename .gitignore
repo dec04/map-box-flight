@@ -87,3 +87,7 @@ typings/
 
 # Electron-Forge
 out/
+/package-lock.json
+/.idea/
+/.webpack/
+/node_modules/
