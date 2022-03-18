@@ -71,6 +71,10 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "@electron-forge/plugin-webpack": "^6.0.0-beta.63",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/line-clamp": "^0.3.1",
+    "@tailwindcss/typography": "^0.5.2",
     "@vercel/webpack-asset-relocator-loader": "^1.7.0",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.3",
@@ -88,8 +92,8 @@
   "dependencies": {
     "cssnano": "^5.1.4",
     "electron-squirrel-startup": "^1.0.0",
+    "modern-normalize": "^1.1.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "reset-css": "^5.0.1"
+    "react-dom": "^17.0.2"
   }
 }
