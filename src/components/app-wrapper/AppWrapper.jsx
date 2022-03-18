@@ -5,6 +5,7 @@ export default class AppWrapper extends React.Component {
         return <div>
             <h1>💖 Hello World!</h1>
             <p>Welcome to your Electron application.</p>
+            <button className='bg-indigo-500'>Tailwind</button>
         </div>;
     }
 }

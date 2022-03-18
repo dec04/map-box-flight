@@ -1,11 +1,26 @@
 const rules = require("./webpack.rules");
 
 rules.push({
-    test: /\.(css|scss)$/,
+    test: /\.(css|scss|sass)$/,
     use: [
         {loader: "style-loader"},
         {loader: "css-loader"},
-        {loader: "sass-loader"}
+        {loader: "sass-loader"},
+        {
+            loader: "postcss-loader",
+            options: {
+                postcssOptions: {
+                    plugins: [
+                        [
+                            "postcss-preset-env",
+                            {
+                                // Options
+                            },
+                        ],
+                    ],
+                },
+            },
+        }
     ],
 });
 
