@@ -1,51 +1,28 @@
 import React from "react";
 import {Config} from "../../../application.config";
-import {Application} from "../../js/Application";
-import Log from "../../js/Log";
 import UserInterface from "../../js/UserInterface";
+import {observer} from "mobx-react";
+import appStore from "../../js/store/ApplicationStore";
 
 const {ipcRenderer, remote} = window.require("electron");
 
-export default class TitleBar extends React.Component {
+export default observer(class TitleBar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            theme: localStorage.theme,
-            alwaysOnTop: false
-        };
-
-        this.setAlwaysOnTop = this.setAlwaysOnTop.bind(this);
-        this.render = this.render.bind(this);
-        this.changeTheme = this.changeTheme.bind(this);
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.alwaysOnTop !== this.state.alwaysOnTop) {
-            Log.i(`Always on top state: ${this.state.alwaysOnTop}`);
-            ipcRenderer.send("always-on-top", this.state.alwaysOnTop);
-        }
     }
 
     setAlwaysOnTop(e) {
         UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__heartBeat").then(() => {
-            this.setState({alwaysOnTop: !this.state.alwaysOnTop});
+            appStore.changeAlwaysOnTop();
+            ipcRenderer.send("always-on-top", appStore.alwaysOnTop);
         });
     }
 
     changeTheme(e) {
         UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__bounceOut").then(() => {
-            if (localStorage.theme === "dark") {
-                localStorage.theme = "light";
-                this.setState({theme: "light"});
-            } else {
-                localStorage.theme = "dark";
-                this.setState({theme: "dark"});
-            }
-            Application.setTheme();
+            appStore.changeTheme();
         });
-
-
     }
 
     closeApplication(e) {
@@ -57,7 +34,7 @@ export default class TitleBar extends React.Component {
     render() {
         const svgPaperClip = <svg xmlns="http://www.w3.org/2000/svg"
                                   id="svgPaperClip"
-                                  className={this.state.alwaysOnTop ? "highlight" : ""}
+                                  className={appStore.alwaysOnTop === true || appStore.alwaysOnTop === "true" ? "highlight" : ""}
                                   viewBox="0 0 24 24" fill="none">
             <path strokeLinecap="round" strokeLinejoin="round"
                   d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
@@ -86,7 +63,7 @@ export default class TitleBar extends React.Component {
                         {svgPaperClip}
                     </button>
                     <button onClick={(e) => this.changeTheme(e)} type="button" className="non-draggable">
-                        {localStorage.theme === "dark" ? svgSun : svgMoon}
+                        {appStore.theme === "dark" ? svgMoon : svgSun}
                     </button>
                     <button onClick={(e) => this.closeApplication(e)} type="button" id="close-app-button"
                             className="non-draggable">
@@ -99,5 +76,5 @@ export default class TitleBar extends React.Component {
 
         </div>;
     }
-}
+});
 

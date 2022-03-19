@@ -32,5 +32,6 @@ import {Application} from "./js/Application";
 import Log from "./js/Log";
 
 Application.setTheme();
+Application.setAlwaysOnTop();
 
 Log.d("👋 This message is being logged by \"renderer.js\", included via webpack");
