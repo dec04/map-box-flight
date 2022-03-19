@@ -26,10 +26,10 @@
         }
 
         svg {
-          @apply w-full h-full stroke-gray-400 hover:stroke-white stroke-2 cursor-pointer m-0 p-0 self-center justify-self-center transition-none;
+          @apply w-full h-full stroke-gray-400 border border-transparent hover:stroke-white stroke-2 cursor-pointer m-0 p-0 self-center justify-self-center transition-none;
 
           &.highlight {
-            @apply stroke-cyan-400;
+            @apply stroke-white bg-indigo-600 bg-opacity-50 border border-indigo-600 rounded-full;
           }
         }
 

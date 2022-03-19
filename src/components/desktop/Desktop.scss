@@ -1,0 +1,5 @@
+@layer components {
+  .app-desktop {
+    @apply bg-slate-600 dark:bg-slate-800 border rounded-md border-slate-600 dark:border-slate-800 w-full h-full;
+  }
+}

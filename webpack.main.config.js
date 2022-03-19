@@ -4,8 +4,13 @@ module.exports = {
      * that runs in the main process.
      */
     entry: "./src/main.js",
+    resolve: {
+        extensions: [".js", ".jsx", ".sass", ".scss", ".css"]
+    },
     // Put your normal webpack config below here
     module: {
         rules: require("./webpack.rules"),
-    },
-};
+    }
+    ,
+}
+;

@@ -1,0 +1,5 @@
+@layer components {
+  .content {
+    @apply bg-transparent h-full w-full flex flex-col;
+  }
+}

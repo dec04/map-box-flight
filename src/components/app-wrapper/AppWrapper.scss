@@ -1,9 +1,5 @@
 @layer components {
   .app-wrapper {
-    @apply bg-slate-600 dark:bg-slate-800 p-8 w-screen h-screen;
-  }
-
-  button {
-    @apply bg-slate-300 dark:bg-slate-500 py-2 px-4 rounded-lg;
+    @apply bg-neutral-900 p-2.5 w-screen h-screen;
   }
 }
