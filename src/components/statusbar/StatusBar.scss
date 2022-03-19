@@ -12,10 +12,6 @@
 
     .status-bar-notification-group {
       @apply flex items-center;
-
-      .icon {
-        @apply w-6 h-6 stroke-2 fill-transparent hover:fill-white stroke-gray-200 hover:stroke-white dark:stroke-gray-400 hover:dark:stroke-gray-200 dark:hover:fill-gray-200;
-      }
     }
   }
 }

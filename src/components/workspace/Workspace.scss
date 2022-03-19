@@ -1,5 +1,5 @@
 @layer components {
   .workspace {
-    @apply bg-transparent p-4 h-full grow;
+    @apply bg-transparent p-4 h-full grow grid grid-cols-3 gap-3;
   }
 }
