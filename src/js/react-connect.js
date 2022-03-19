@@ -1,9 +1,7 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
-import AppWrapper from "../components/app-wrapper/AppWrapper.jsx";
-import TitleBar from "../components/titleBar/TitleBar.jsx";
 import {Application} from "./Application";
+import App from "../components/app/App.jsx";
 
 Application.extendDomElements();
-ReactDOM.render(<AppWrapper/>, document.getElementById("root-app"));
-ReactDOM.render(<TitleBar/>, document.getElementById("title-bar-container"));
+ReactDOM.render(<App/>, document.getElementById("root-app"));
