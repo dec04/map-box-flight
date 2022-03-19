@@ -19,14 +19,14 @@
       @apply h-full flex flex-row justify-items-center items-center;
 
       button {
-        @apply p-0.5 w-6 h-6 bg-transparent border border-transparent hover:border-white cursor-pointer flex justify-center;
+        @apply p-0 w-4 h-4 bg-transparent cursor-pointer flex justify-center;
 
         &:not(:first-child) {
           @apply ml-2;
         }
 
         svg {
-          @apply h-4 w-4 stroke-gray-500 hover:stroke-white stroke-2 cursor-pointer m-0 p-0 self-center justify-self-center transition-none;
+          @apply w-full h-full stroke-gray-500 hover:stroke-white stroke-2 cursor-pointer m-0 p-0 self-center justify-self-center transition-none;
 
           &.highlight {
             @apply stroke-cyan-400;

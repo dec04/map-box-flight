@@ -14,6 +14,17 @@ class Application {
 
     }
 
+    static extendDomElements() {
+        Element.prototype.setAnimation = function (animations) {
+            const animationsArray = animations.split(" ");
+
+            Log.d(`Set animations ${animationsArray} on element [${this}]`);
+
+            for (const el of animationsArray) {
+                this.classList.add(`${animationsArray[el]}`);
+            }
+        };
+    }
 }
 
 export {Application};

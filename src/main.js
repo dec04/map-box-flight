@@ -68,8 +68,9 @@ ipcMain.on("close-me", (evt, arg) => {
 });
 
 ipcMain.on("always-on-top", (evt, arg) => {
-    const win = BrowserWindow.getFocusedWindow();
-    win.setAlwaysOnTop(arg, "screen");
+    for (const win of BrowserWindow.getAllWindows()) {
+        win.setAlwaysOnTop(arg, "normal");
+    }
 });
 
 // In this file you can include the rest of your app's specific main process

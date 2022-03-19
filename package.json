@@ -93,6 +93,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "animate.css": "^4.1.1",
     "cssnano": "^5.1.4",
     "electron-squirrel-startup": "^1.0.0",
     "react": "^17.0.2",
