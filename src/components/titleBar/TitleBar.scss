@@ -1,0 +1,27 @@
+@layer components {
+  #title-bar {
+    @apply relative w-full h-full px-2 bg-neutral-900 flex justify-between;
+
+    #title-bar-header {
+      @apply text-white font-bold text-xs self-center ;
+    }
+
+    #app-control-buttons-group {
+      @apply h-full flex flex-row justify-items-center items-center;
+
+      button {
+        @apply p-0.5 w-6 h-6 bg-transparent border border-transparent hover:border-white cursor-pointer ml-2 flex justify-center;
+
+        svg {
+          @apply h-4 w-4 fill-gray-500 hover:fill-white stroke-gray-500 hover:stroke-white stroke-2 cursor-pointer m-0 p-0 self-center justify-self-center transition-none;
+        }
+
+        &:hover {
+          svg {
+            @apply fill-white stroke-white transition-none;
+          }
+        }
+      }
+    }
+  }
+}

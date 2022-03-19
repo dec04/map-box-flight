@@ -1,0 +1,25 @@
+@import "TitleBar.scss";
+
+:root {
+  --fallback-title-bar-height: 32px;
+}
+
+#title-bar-container {
+  position: absolute;
+  top: env(titlebar-area-y, 0);
+  height: env(titlebar-area-height, var(--fallback-title-bar-height));
+  width: 100%;
+
+  .draggable {
+    app-region: drag;
+    /* Pre-fix app-region during standardization process */
+    -webkit-app-region: drag;
+  }
+
+  .non-draggable {
+    app-region: no-drag;
+    /* Pre-fix app-region during standardization process */
+    -webkit-app-region: no-drag;
+  }
+}
+

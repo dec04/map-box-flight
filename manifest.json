@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "map-box-flight",
+  "short_name": "m-p-f",
+  "description": "github.com/dec04",
+  "display": "minimal-ui",
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "theme_color": "#71717a",
+  "background_color": "#475569"
+}

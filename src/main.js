@@ -1,5 +1,6 @@
-const {app, BrowserWindow} = require("electron");
+const {app, BrowserWindow, ipcMain} = require("electron");
 const path = require("path");
+const {Config} = require("../application.config");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -10,8 +11,25 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        frame: false,
+        titleBarStyle: "hidden-inset",
+        show: true,
+        titleBarOverlay: {
+            color: "#2f3241",
+            symbolColor: "#74b1be"
+        },
+        width: Config.applicationWidth,
+        height: Config.applicationHeight,
+        maxHeight: Config.applicationMaxHeight,
+        maxWidth: Config.applicationMaxWidth,
+        minHeight: Config.applicationMinHeight,
+        minWidth: Config.applicationMinWidth,
+        backgroundColor: "#7B435B",
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true,
+        }
     });
 
     // and load the index.html of the app.
@@ -41,6 +59,10 @@ app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow();
     }
+});
+
+ipcMain.on("close-me", (evt, arg) => {
+    app.quit();
 });
 
 // In this file you can include the rest of your app's specific main process

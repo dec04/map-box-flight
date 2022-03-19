@@ -26,7 +26,11 @@
  * ```
  */
 
-import "./index.scss";
-import "./react-connect";
+import "./styles/main.scss";
+import "./js/react-connect";
+import {Application} from "./js/Application";
+import Log from "./js/Log";
 
-console.log("👋 This message is being logged by \"renderer.js\", included via webpack");
+Application.setTheme();
+
+Log.d("👋 This message is being logged by \"renderer.js\", included via webpack");

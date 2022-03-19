@@ -1,0 +1,15 @@
+@import "../../node_modules/tailwindcss/base.css";
+
+@import "../../node_modules/tailwindcss/components.css";
+@import "../components/titleBar/TitleBarContainer.scss";
+@import "../components/app-wrapper/AppWrapper.scss";
+
+@import "../../node_modules/tailwindcss/utilities.css";
+
+html, body {
+  @apply bg-slate-600 dark:bg-slate-800;
+
+  * {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
