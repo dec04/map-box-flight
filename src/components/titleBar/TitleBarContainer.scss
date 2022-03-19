@@ -5,10 +5,9 @@
 }
 
 #title-bar-container {
-  position: absolute;
   top: env(titlebar-area-y, 0);
   height: env(titlebar-area-height, var(--fallback-title-bar-height));
-  width: 100%;
+  @apply absolute right-0 border border-neutral-900 rounded-bl-xl w-auto md:w-64;
 
   .draggable {
     app-region: drag;

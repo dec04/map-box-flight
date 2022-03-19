@@ -1,24 +1,41 @@
 @layer components {
   #title-bar {
-    @apply relative w-full h-full px-2 bg-neutral-900 flex justify-between;
+    @apply relative w-full h-full px-2 bg-neutral-900 flex justify-end md:justify-between rounded-bl-xl;
 
-    #title-bar-header {
-      @apply text-white font-bold text-xs self-center ;
+    #app-title-bar-info-group {
+      @apply w-full h-full flex flex-wrap justify-start items-center hidden md:flex;
+
+      #title-bar-header {
+        @apply text-white font-bold text-xs;
+      }
+
+      #title-bar-version {
+        @apply ml-2 text-gray-500 text-xs;
+      }
     }
+
 
     #app-control-buttons-group {
       @apply h-full flex flex-row justify-items-center items-center;
 
       button {
-        @apply p-0.5 w-6 h-6 bg-transparent border border-transparent hover:border-white cursor-pointer ml-2 flex justify-center;
+        @apply p-0.5 w-6 h-6 bg-transparent border border-transparent hover:border-white cursor-pointer flex justify-center;
+
+        &:not(:first-child) {
+          @apply ml-2;
+        }
 
         svg {
-          @apply h-4 w-4 fill-gray-500 hover:fill-white stroke-gray-500 hover:stroke-white stroke-2 cursor-pointer m-0 p-0 self-center justify-self-center transition-none;
+          @apply h-4 w-4 stroke-gray-500 hover:stroke-white stroke-2 cursor-pointer m-0 p-0 self-center justify-self-center transition-none;
+
+          &.highlight {
+            @apply stroke-cyan-400;
+          }
         }
 
         &:hover {
           svg {
-            @apply fill-white stroke-white transition-none;
+            @apply stroke-white transition-none;
           }
         }
       }

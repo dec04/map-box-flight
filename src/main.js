@@ -1,6 +1,8 @@
-const {app, BrowserWindow, ipcMain} = require("electron");
+const {app, BrowserWindow, ipcMain, Notification} = require("electron");
 const path = require("path");
 const {Config} = require("../application.config");
+
+let alwaysOnTop;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -63,6 +65,11 @@ app.on("activate", () => {
 
 ipcMain.on("close-me", (evt, arg) => {
     app.quit();
+});
+
+ipcMain.on("always-on-top", (evt, arg) => {
+    const win = BrowserWindow.getFocusedWindow();
+    win.setAlwaysOnTop(arg, "screen");
 });
 
 // In this file you can include the rest of your app's specific main process

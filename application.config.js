@@ -10,6 +10,7 @@ export class Config {
     static applicationMaxHeight = 1312;
 
     static applicationTitle = json.productName;
+    static applicationVersion = json.version;
 
     // Log colors
     static debugColor = "#2563eb";
