@@ -34,7 +34,7 @@ export default class TitleBar extends React.Component {
     }
 
     changeTheme(e) {
-        UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__heartBeat").then(() => {
+        UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__bounceOut").then(() => {
             if (localStorage.theme === "dark") {
                 localStorage.theme = "light";
                 this.setState({theme: "light"});
@@ -49,7 +49,7 @@ export default class TitleBar extends React.Component {
     }
 
     closeApplication(e) {
-        UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__heartBeat").then(() => {
+        UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__bounceOut").then(() => {
             ipcRenderer.send("close-me");
         });
     }
