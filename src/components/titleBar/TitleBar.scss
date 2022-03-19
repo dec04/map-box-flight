@@ -14,9 +14,12 @@
       }
     }
 
-
     #app-control-buttons-group {
       @apply h-full flex flex-row justify-items-center items-center;
+
+      .drag-icon {
+        @apply w-4 h-4 stroke-gray-600 stroke-2 cursor-grabbing m-0 p-0 self-center justify-self-center transition-none md:hidden;
+      }
 
       button {
         @apply p-0 w-4 h-4 bg-transparent cursor-pointer flex justify-center;

@@ -22,7 +22,6 @@ export default class UserInterface extends Application {
                 resolve("Animation ended");
             }, {once: true});
         });
-
     }
 
 }

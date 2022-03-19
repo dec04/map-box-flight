@@ -4,8 +4,8 @@ export class Config {
     // Main browser resolution (iPad Pro Gen 2)
     static applicationWidth = 834;
     static applicationHeight = 1112;
-    static applicationMinWidth = 400;
-    static applicationMinHeight = 550;
+    static applicationMinWidth = 600;
+    static applicationMinHeight = 850;
     static applicationMaxWidth = 1034;
     static applicationMaxHeight = 1312;
 

@@ -1,16 +1,20 @@
 @layer components {
   .status-bar {
-    @apply bg-transparent h-10 top-0 w-[calc(100%-theme(width.64)+theme(padding.3))] py-0.5 pl-4 flex justify-between text-gray-300 dark:text-gray-400 antialiased font-semibold transition-none;
+    @apply bg-transparent h-10 top-0 w-[calc(100%-theme(width.28)+theme(padding.3))] md:w-[calc(100%-theme(width.64)+theme(padding.3))] py-0.5 pl-4 flex justify-between text-gray-300 dark:text-gray-400 antialiased font-semibold transition-none;
 
     .status-bar-network-group {
-      @apply select-none;
-    }
-
-    .status-bar-network-group, .status-bar-notification-group {
-      @apply flex items-center;
+      @apply select-none flex items-center;
 
       .icon {
         @apply w-6 h-6 fill-transparent stroke-gray-300 stroke-2 dark:stroke-gray-400;
+      }
+    }
+
+    .status-bar-notification-group {
+      @apply flex items-center;
+
+      .icon {
+        @apply w-6 h-6 stroke-2 fill-transparent hover:fill-white stroke-gray-200 hover:stroke-white dark:stroke-gray-400 hover:dark:stroke-gray-200 dark:hover:fill-gray-200;
       }
     }
   }
