@@ -3,6 +3,7 @@ import {Config} from "../../../application.config";
 import UserInterface from "../../js/UserInterface";
 import {observer} from "mobx-react";
 import appStore from "../../js/store/ApplicationStore";
+import {Application} from "../../js/Application";
 
 const {ipcRenderer, remote} = window.require("electron");
 
@@ -22,6 +23,7 @@ export default observer(class TitleBar extends React.Component {
     changeTheme(e) {
         UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__bounceOut").then(() => {
             appStore.changeTheme();
+            Application.setTheme();
         });
     }
 
