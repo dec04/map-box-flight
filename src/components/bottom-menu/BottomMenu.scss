@@ -1,0 +1,15 @@
+@layer components {
+  .bottom-menu {
+    @apply flex items-center;
+
+    button {
+      .icon {
+        @apply w-6 h-6 stroke-2 fill-transparent hover:fill-white active:fill-white stroke-gray-200 hover:stroke-white dark:stroke-gray-400 hover:dark:stroke-gray-300 dark:hover:fill-gray-300;
+      }
+    }
+
+    .popover-panel {
+      @apply absolute z-10 w-screen max-w-xs px-4 bottom-0 mb-20 transform -translate-x-1/2 left-1/2 lg:max-w-sm overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-300 p-4 text-gray-700;
+    }
+  }
+}

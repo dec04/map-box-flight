@@ -16,7 +16,7 @@ export default observer(class TitleBar extends React.Component {
     setAlwaysOnTop(e) {
         UserInterface.animateElement(e.currentTarget.firstChild, "animate__animated animate__heartBeat").then(() => {
             appStore.changeAlwaysOnTop();
-            ipcRenderer.send("always-on-top", appStore.alwaysOnTop);
+            Application.setAlwaysOnTop();
         });
     }
 
