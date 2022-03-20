@@ -3,7 +3,7 @@
     @apply p-4 w-full h-full flex flex-col flex-wrap justify-center content-center items-center;
 
     &:hover {
-      .app-icon-gradient, .app-icon {
+      .app-icon-gradient, .app-icon-card {
         @apply scale-95;
       }
 
@@ -13,7 +13,7 @@
     }
 
     .app-icon-wrapper {
-      @apply relative w-32 h-32 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-64 lg:h-64;
+      @apply relative w-28 h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-48 lg:h-48;
 
       .app-icon-gradient {
         @apply z-10 absolute w-full h-full rounded-3xl cursor-pointer hover:scale-95;
@@ -22,8 +22,16 @@
         box-shadow: 0 0 32px 26px rgba(34, 60, 80, 0.2) inset;
       }
 
-      .app-icon {
+      .app-icon-card {
         @apply w-full h-full rounded-3xl cursor-pointer hover:scale-95 drop-shadow-xl;
+
+        .app-icon {
+          @apply w-full h-full p-8 transition-none drop-shadow-xl;
+
+          svg {
+            @apply fill-gray-200 dark:fill-gray-400 stroke-gray-200 dark:stroke-gray-400
+          }
+        }
       }
     }
 

@@ -13,6 +13,6 @@
 - Browser - In app browser ?;
     - Lime;
 - Settings - Application settings;
-    - gray;
+    - violet;
 - Donuts - About developer and donates links;
     - Rose;
