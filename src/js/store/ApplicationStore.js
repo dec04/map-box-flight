@@ -8,7 +8,8 @@ class ApplicationStore {
     theme = localStorage.theme;
     currentTime = moment();
     currentTimeUTC = moment().utcOffset("+00:00");
-    internet = "Offline";
+    isOnline = navigator.onLine;
+    networkName = "Offline";
     hasUnreadNotifications = !!localStorage.hasUnreadNotifications;
 
     constructor() {
@@ -51,7 +52,8 @@ class ApplicationStore {
     }
 
     checkConnection() {
-        this.intenret = navigator.onLine ? "Fly One Network" : "Offline";
+        this.isOnline = navigator.onLine;
+        this.networkName = navigator.onLine ? "Fly One Network" : "Offline";
     }
 
     makeNotificationsRead() {
