@@ -8,11 +8,12 @@ class ApplicationStore {
     theme = localStorage.theme;
     currentTime = moment();
     currentTimeUTC = moment().utcOffset("+00:00");
-    internet = "offline";
+    internet = "Offline";
     hasUnreadNotifications = !!localStorage.hasUnreadNotifications;
 
     constructor() {
         makeAutoObservable(this);
+        this.checkConnection();
         Log.d(`Current store:\n-alwaysOnTop: ${this.alwaysOnTop};\n-theme:${this.theme}`);
     }
 

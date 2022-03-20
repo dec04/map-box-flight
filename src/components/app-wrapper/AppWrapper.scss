@@ -1,5 +1,5 @@
 @layer components {
   .app-wrapper {
-    @apply bg-neutral-900 p-2.5 w-screen h-screen;
+    @apply bg-neutral-900 p-2.5 w-screen h-screen z-40;
   }
 }

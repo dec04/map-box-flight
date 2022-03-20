@@ -1,13 +1,17 @@
 import React from "react";
+import DesktopApp from "../desktop-app/DesktopApp.jsx";
 
 export default class Workspace extends React.Component {
 
     render() {
         return <div className="workspace">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+            <DesktopApp name="One Agency" color="blue"/>
+            <DesktopApp name="Data Store" color="amber"/>
+            <DesktopApp name="One Connect" color="indigo"/>
+            <DesktopApp name="Stonefellers" color="emerald"/>
+            <DesktopApp name="Browser" color="lime"/>
+            <DesktopApp name="Settings" color="neutral"/>
+            <DesktopApp name="Donuts" color="rose"/>
         </div>;
     }
 }
