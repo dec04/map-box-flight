@@ -1,7 +1,7 @@
 import React from "react";
 import {MdImageNotSupported} from "react-icons/md";
 import {IconContext} from "react-icons";
-
+import {Transition} from "@headlessui/react";
 
 export default class DesktopApp extends React.Component {
 
@@ -15,6 +15,9 @@ export default class DesktopApp extends React.Component {
         this.appName = this.props.name ? this.props.name : "App name";
         this.color = this.props.color ? this.props.color : "gray";
         this.icon = this.props.icon ? this.props.icon : <MdImageNotSupported className="app-icon"/>;
+        this.state = {
+            isOpen: true
+        };
     }
 
     makeCardColor() {
@@ -61,15 +64,30 @@ export default class DesktopApp extends React.Component {
 
     render() {
         return <div className="desktop-app">
-            <div className="app-icon-wrapper">
-                <div className="app-icon-gradient"/>
-                <div className={this.makeCardColor()}>
-                    <IconContext.Provider value={{className: this.makeIconColor()}}>
-                        {this.icon}
-                    </IconContext.Provider>
-                </div>
-            </div>
-            <h4 className="app-name">{this.appName}</h4>
+            <Transition
+                appear={true}
+                show={true}
+                enter="transition-scale duration-300 delay-300"
+                enterFrom="scale-0"
+                enterTo="scale-110">
+                <button className="app-icon-wrapper">
+                    <div className="app-icon-gradient"/>
+                    <div className={this.makeCardColor()}>
+                        <IconContext.Provider value={{className: this.makeIconColor()}}>
+                            {this.icon}
+                        </IconContext.Provider>
+                    </div>
+                </button>
+            </Transition>
+
+            <Transition
+                appear={true}
+                show={true}
+                enter="transition-opacity duration-300 delay-[900ms]"
+                enterFrom="opacity-0"
+                enterTo="opacity-100">
+                <h4 className="app-name">{this.appName}</h4>
+            </Transition>
         </div>;
     }
 }
