@@ -2,8 +2,6 @@ import {makeAutoObservable} from "mobx";
 import Log from "../Log";
 import moment from "moment";
 
-const {ipcRenderer, remote} = window.require("electron");
-
 class ApplicationStore {
 
     alwaysOnTop = localStorage.alwaysOnTop;
@@ -11,12 +9,14 @@ class ApplicationStore {
     currentTime = moment();
     currentTimeUTC = moment().utcOffset("+00:00");
     internet = "offline";
+    hasUnreadNotifications = !!localStorage.hasUnreadNotifications;
 
     constructor() {
         makeAutoObservable(this);
         Log.d(`Current store:\n-alwaysOnTop: ${this.alwaysOnTop};\n-theme:${this.theme}`);
     }
 
+    //region Time
     get localTime() {
         return this.currentTime.format("ddd, HH:MM:ss");
     }
@@ -29,6 +29,8 @@ class ApplicationStore {
         this.currentTime = moment();
         this.currentTimeUTC = moment().utcOffset("+00:00");
     }
+
+    //endregion
 
     changeTheme() {
         if (this.theme === "dark") {
@@ -49,6 +51,12 @@ class ApplicationStore {
 
     checkConnection() {
         this.intenret = navigator.onLine ? "Fly One Network" : "Offline";
+    }
+
+    makeNotificationsRead() {
+        this.hasUnreadNotifications = false;
+        localStorage.hasUnreadNotifications = this.hasUnreadNotifications;
+        Log.d(`Set state [hasUnreadNotifications]: ${this.hasUnreadNotifications}, [localStorage.hasUnreadNotifications]: ${localStorage.hasUnreadNotifications}`);
     }
 
 }

@@ -12,7 +12,6 @@ class Application {
             document.documentElement.classList.add("dark");
         } else {
             document.documentElement.classList.remove("dark");
-
         }
     }
 
@@ -20,29 +19,6 @@ class Application {
         Log.i(`Set always on top is ${localStorage.alwaysOnTop}`);
 
         ipcRenderer.send("always-on-top", (localStorage.alwaysOnTop === "true" || localStorage.alwaysOnTop === true));
-    }
-
-    static extendDomElements() {
-        Element.prototype.setAnimation = function (animations) {
-            return new Promise((resolve, reject) => {
-                const animationsArray = animations.split(" ");
-
-                Log.d(`Set animations ${animationsArray} on element [${this}]`);
-
-                for (const el of animationsArray) {
-                    this.classList.add(el);
-                }
-
-                this.addEventListener("animationend", function () {
-                    Log.d("Animation end");
-                    for (const el of animationsArray) {
-                        this.classList.remove(el);
-                    }
-
-                    resolve("Animation ended");
-                }, {once: true});
-            });
-        };
     }
 }
 

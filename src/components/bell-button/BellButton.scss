@@ -3,6 +3,18 @@
     @apply flex items-center;
 
     button {
+      .notification-warning-dot {
+        @apply absolute z-20 translate-x-3 flex h-2 w-2;
+
+        .warning-ping-ring {
+          @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75;
+        }
+
+        .warning-ping-dot {
+          @apply relative inline-flex rounded-full h-2 w-2 bg-red-500;
+        }
+      }
+
       .icon {
         @apply w-6 h-6 stroke-2 fill-transparent hover:fill-white active:fill-white stroke-gray-200 hover:stroke-white dark:stroke-gray-400 hover:dark:stroke-gray-300 dark:hover:fill-gray-300;
       }
