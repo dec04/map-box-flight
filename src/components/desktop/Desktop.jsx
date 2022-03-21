@@ -1,11 +1,10 @@
 import React from "react";
 import Content from "../content/Content.jsx";
 
-export default class Desktop extends React.Component {
+const Desktop = () => {
+    return <div className="app-desktop">
+        <Content/>
+    </div>;
+};
 
-    render() {
-        return <div className="app-desktop">
-            <Content/>
-        </div>;
-    }
-}
+export default Desktop;

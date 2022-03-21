@@ -3,7 +3,7 @@
     @apply p-4 w-full h-full flex flex-col flex-wrap justify-center content-center items-center;
 
     &:hover {
-      .app-icon-gradient, .app-icon-card {
+      .app-icon-gradient, .app-icon-card, .app-icon-open-layer {
         @apply scale-95;
       }
 
@@ -15,8 +15,12 @@
     .app-icon-wrapper {
       @apply relative w-28 h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-48 lg:h-48;
 
+      .app-icon-open-layer {
+        @apply absolute z-20 w-full h-full bg-gray-200 rounded-3xl cursor-pointer;
+      }
+
       .app-icon-gradient {
-        @apply z-10 absolute w-full h-full rounded-3xl cursor-pointer hover:scale-95;
+        @apply absolute z-10 w-full h-full rounded-3xl cursor-pointer;
         -webkit-box-shadow: 0 0 32px 26px rgba(34, 60, 80, 0.2) inset;
         -moz-box-shadow: 0 0 32px 26px rgba(34, 60, 80, 0.2) inset;
         box-shadow: 0 0 32px 26px rgba(34, 60, 80, 0.2) inset;

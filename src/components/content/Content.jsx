@@ -1,15 +1,18 @@
 import React from "react";
-import StatusBar from "../statusbar/StatusBar.jsx";
 import Workspace from "../workspace/Workspace.jsx";
-import NavBar from "../navbar/NavBar.jsx";
+import {Route, Routes} from "react-router-dom";
+import RunningApplication from "../running-application/RunningApplication.jsx";
+import RouteLayout from "../route-layout/RouteLayout.jsx";
 
-export default class Content extends React.Component {
+const Content = () => {
+    return <div className="content">
+        <Routes>
+            <Route path="/" element={<RouteLayout/>}>
+                <Route path="/" index element={<Workspace/>}/>
+                <Route path="run" element={<RunningApplication/>}/>
+            </Route>
+        </Routes>
+    </div>;
+};
 
-    render() {
-        return <div className="content">
-            <StatusBar/>
-            <Workspace/>
-            <NavBar/>
-        </div>;
-    }
-}
+export default Content;

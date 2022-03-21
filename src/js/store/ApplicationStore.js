@@ -15,7 +15,7 @@ class ApplicationStore {
     constructor() {
         makeAutoObservable(this);
         this.checkConnection();
-        Log.d(`Current store:\n-alwaysOnTop: ${this.alwaysOnTop};\n-theme:${this.theme}`);
+        Log.d(`Current store:\n  -alwaysOnTop: ${this.alwaysOnTop};\n  -theme:${this.theme}`);
     }
 
     //region Time
@@ -53,7 +53,7 @@ class ApplicationStore {
 
     checkConnection() {
         this.isOnline = navigator.onLine;
-        this.networkName = navigator.onLine ? "Fly One Network" : "Offline";
+        this.networkName = navigator.onLine ? "Fly One" : "Offline";
     }
 
     makeNotificationsRead() {

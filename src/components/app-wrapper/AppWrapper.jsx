@@ -1,12 +1,11 @@
 import React from "react";
 import Desktop from "../desktop/Desktop.jsx";
 
-export default class AppWrapper extends React.Component {
+const AppWrapper = () => {
+    return <div className="app-wrapper">
+        <Desktop/>
+    </div>;
+};
 
-    render() {
-        return <div className="app-wrapper">
-            <Desktop/>
-        </div>;
-    }
-}
+export default AppWrapper;
 

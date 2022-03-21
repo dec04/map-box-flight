@@ -2,26 +2,17 @@ import React from "react";
 import {MdImageNotSupported} from "react-icons/md";
 import {IconContext} from "react-icons";
 import {Transition} from "@headlessui/react";
+import {useNavigate} from "react-router-dom";
 
-export default class DesktopApp extends React.Component {
+const DesktopApp = (props) => {
 
-    appName;
-    color;
-    icon;
+    let navigate = useNavigate();
+    let appName = props.name ? props.name : "App name";
+    let color = props.color ? props.color : "gray";
+    let icon = props.icon ? props.icon : <MdImageNotSupported className="app-icon"/>;
 
-    constructor(props) {
-        super(props);
-
-        this.appName = this.props.name ? this.props.name : "App name";
-        this.color = this.props.color ? this.props.color : "gray";
-        this.icon = this.props.icon ? this.props.icon : <MdImageNotSupported className="app-icon"/>;
-        this.state = {
-            isOpen: true
-        };
-    }
-
-    makeCardColor() {
-        switch (this.color) {
+    const makeCardColor = () => {
+        switch (color) {
             case "blue":
                 return "app-icon-card bg-sky-600 dark:bg-sky-800";
             case "amber":
@@ -39,10 +30,10 @@ export default class DesktopApp extends React.Component {
             default:
                 return "app-icon-card bg-gray-600 dark:bg-gray-800";
         }
-    }
+    };
 
-    makeIconColor() {
-        switch (this.color) {
+    const makeIconColor = () => {
+        switch (color) {
             case "blue":
                 return "fill-sky-200 dark:fill-sky-400 stroke-sky-200 dark:stroke-sky-400";
             case "amber":
@@ -60,34 +51,41 @@ export default class DesktopApp extends React.Component {
             default:
                 return "fill-gray-200 dark:fill-gray-400 stroke-gray-200 dark:stroke-gray-400";
         }
-    }
+    };
 
-    render() {
-        return <div className="desktop-app">
-            <Transition
-                appear={true}
-                show={true}
-                enter="transition-scale duration-300 delay-300"
-                enterFrom="scale-0"
-                enterTo="scale-110">
-                <button className="app-icon-wrapper">
-                    <div className="app-icon-gradient"/>
-                    <div className={this.makeCardColor()}>
-                        <IconContext.Provider value={{className: this.makeIconColor()}}>
-                            {this.icon}
-                        </IconContext.Provider>
-                    </div>
-                </button>
-            </Transition>
+    const handleClick = (e) => {
+        e.currentTarget.setAnimation("animate__animated animate__bounceOut animate__slow").then(() => {
+            navigate("/run");
+        });
+    };
 
-            <Transition
-                appear={true}
-                show={true}
-                enter="transition-opacity duration-300 delay-[900ms]"
-                enterFrom="opacity-0"
-                enterTo="opacity-100">
-                <h4 className="app-name">{this.appName}</h4>
-            </Transition>
-        </div>;
-    }
-}
+    return <div className="desktop-app">
+        <Transition
+            appear={true}
+            show={true}
+            enter="transition duration-300 delay-300"
+            enterFrom="scale-0"
+            enterTo="scale-110">
+            <button onClick={(e) => handleClick(e)} className="app-icon-wrapper">
+                {/*<div className="app-icon-open-layer"/>*/}
+                <div className="app-icon-gradient"/>
+                <div className={makeCardColor()}>
+                    <IconContext.Provider value={{className: makeIconColor()}}>
+                        {icon}
+                    </IconContext.Provider>
+                </div>
+            </button>
+        </Transition>
+
+        <Transition
+            appear={true}
+            show={true}
+            enter="transition-opacity duration-300 delay-[900ms]"
+            enterFrom="opacity-0"
+            enterTo="opacity-100">
+            <h4 className="app-name">{appName}</h4>
+        </Transition>
+    </div>;
+};
+
+export default DesktopApp;
