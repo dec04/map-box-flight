@@ -9,7 +9,7 @@ const Content = () => {
         <Routes>
             <Route path="/" element={<RouteLayout/>}>
                 <Route path="/" index element={<Workspace/>}/>
-                <Route path="run" element={<RunningApplication/>}/>
+                <Route path="/app/:id" element={<RunningApplication/>}/>
             </Route>
         </Routes>
     </div>;

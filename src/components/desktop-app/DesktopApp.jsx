@@ -55,7 +55,7 @@ const DesktopApp = (props) => {
 
     const handleClick = (e) => {
         e.currentTarget.setAnimation("animate__animated animate__bounceOut animate__slow").then(() => {
-            navigate("/run");
+            navigate(`/app/${props.appId}`);
         });
     };
 
