@@ -21,7 +21,7 @@
     }
 
     .popover-panel {
-      @apply absolute z-40 top-0 left-1/2 w-4/5 max-h-64 p-4 transform -translate-x-1/2 translate-y-14 overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-300 text-gray-700;
+      @apply absolute z-40 top-0 left-1/2 w-3/5 py-4 transform -translate-x-1/2 translate-y-14 overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-300 text-gray-700;
     }
   }
 }

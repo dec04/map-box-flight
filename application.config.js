@@ -24,6 +24,8 @@ export class Config {
     static infoColor = "#0891b2";
     static warningColor = "#ca8a04";
 
+    static notificationMaxCount = 6;
+
     static applications = [{
         id: 1,
         name: "One Agency",

@@ -28,9 +28,11 @@ const BottomMenu = () => {
             leaveFrom="transform scale-100 opacity-300"
             leaveTo="transform scale-90 opacity-0">
             <Popover.Panel className="popover-panel">
-                <MenuItem appId="6" icon={<BsInfoSquare/>} name="Settings"/>
-                {/* TODO: Add browser app and link to github */}
-                <MenuItem appId="" icon={<IoSettingsOutline/>} name="About"/>
+                <Popover.Button>
+                    <MenuItem appId="6" icon={<BsInfoSquare/>} name="Settings"/>
+                    {/* TODO: Add browser app and link to github */}
+                    <MenuItem appId="" icon={<IoSettingsOutline/>} name="About"/>
+                </Popover.Button>
             </Popover.Panel>
         </Transition>
 

@@ -1,11 +1,13 @@
 import React, {Fragment} from "react";
 import {Popover, Transition} from "@headlessui/react";
 import appStore from "../../js/store/ApplicationStore";
+import NotificationItem from "./NotificationItem.jsx";
+import {Config} from "../../../application.config";
+import {observer} from "mobx-react";
 
 const BellButton = () => {
 
     const showNotificationMenu = (e) => {
-        appStore.makeNotificationsRead();
         e.currentTarget.setAnimation("animate__animated animate__heartBeat");
     };
 
@@ -42,12 +44,15 @@ const BellButton = () => {
             leaveFrom="transform scale-100 opacity-300"
             leaveTo="transform scale-90 opacity-0">
             <Popover.Panel className="popover-panel">
-                Content bell notifications
-                Content bell notifications
+                <Popover.Button>
+                    {appStore.notifications.slice(0, Config.notificationMaxCount).reverse().map((el) =>
+                        <NotificationItem key={el.id} id={el.id} appId={el.app} title={el.title} message={el.message}
+                                          icon={1}/>)}
+                </Popover.Button>
             </Popover.Panel>
         </Transition>
 
     </Popover>;
 };
 
-export default BellButton;
+export default observer(BellButton);

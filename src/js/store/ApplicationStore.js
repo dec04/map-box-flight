@@ -1,6 +1,7 @@
 import {makeAutoObservable} from "mobx";
 import Log from "../Log";
 import moment from "moment";
+import testNotifications from "../../../test_mocks/testNotifications";
 
 class ApplicationStore {
 
@@ -10,7 +11,7 @@ class ApplicationStore {
     currentTimeUTC = moment().utcOffset("+00:00");
     isOnline = navigator.onLine;
     networkName = "Offline";
-    hasUnreadNotifications = !!localStorage.hasUnreadNotifications;
+    notifications = testNotifications;
 
     constructor() {
         makeAutoObservable(this);
@@ -56,10 +57,13 @@ class ApplicationStore {
         this.networkName = navigator.onLine ? "Fly One" : "Offline";
     }
 
-    makeNotificationsRead() {
-        this.hasUnreadNotifications = false;
-        localStorage.hasUnreadNotifications = this.hasUnreadNotifications;
-        Log.d(`Set state [hasUnreadNotifications]: ${this.hasUnreadNotifications}, [localStorage.hasUnreadNotifications]: ${localStorage.hasUnreadNotifications}`);
+    get hasUnreadNotifications() {
+        const unread = this.notifications.filter((el) => !el.isRead);
+        return unread.length > 0;
+    }
+
+    makeNotificationRead(id) {
+        this.notifications[id].isRead = true;
     }
 
 }

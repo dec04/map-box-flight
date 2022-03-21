@@ -1,8 +1,13 @@
 import Log from "./Log";
+import {Config} from "../../application.config";
 
 const {ipcRenderer, remote} = window.require("electron");
 
 class Application {
+
+    static getAppById(id) {
+        return Config.applications.filter((el) => el.id === id);
+    }
 
     static setTheme() {
         Log.i(`Set ${localStorage.theme} theme`);

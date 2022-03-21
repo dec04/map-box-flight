@@ -1,6 +1,10 @@
 @layer components {
   .menu-item {
-    @apply bg-transparent w-full h-12 p-0 m-0 ml-0 min-h-min divide-x flex justify-center items-center hover:bg-gray-300 dark:hover:bg-gray-400 cursor-pointer;
+    @apply bg-transparent w-full h-12 p-0 m-0 ml-0 min-h-min flex justify-center items-center hover:bg-gray-300 dark:hover:bg-gray-400 cursor-pointer;
+
+    &:not(:last-child) {
+      @apply border-b border-gray-200 dark:border-gray-400;
+    }
 
     a {
       @apply block w-full h-full border-none text-neutral-800 dark:text-neutral-700 text-center flex justify-center items-center;
