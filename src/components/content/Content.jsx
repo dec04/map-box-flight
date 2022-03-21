@@ -10,6 +10,7 @@ const Content = () => {
             <Route path="/" element={<RouteLayout/>}>
                 <Route path="/" index element={<Launcher/>}/>
                 <Route path="/app/:id" element={<RunningApplication/>}/>
+                <Route path="*" element={<Launcher/>}/>
             </Route>
         </Routes>
     </div>;

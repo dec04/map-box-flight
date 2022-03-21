@@ -60,4 +60,8 @@ export class Config {
         color: "rose",
         icon: <GiDonut className="app-icon"/>,
     }];
+
+    // Menu items
+    // Settings open settings app
+    // About open Browser app with link to github
 }

@@ -1,6 +1,8 @@
 import React, {Fragment} from "react";
 import {Popover, Transition} from "@headlessui/react";
-
+import MenuItem from "./MenuItem.jsx";
+import {BsInfoSquare} from "react-icons/bs";
+import {IoSettingsOutline} from "react-icons/io5";
 
 const BottomMenu = () => {
 
@@ -26,7 +28,9 @@ const BottomMenu = () => {
             leaveFrom="transform scale-100 opacity-300"
             leaveTo="transform scale-90 opacity-0">
             <Popover.Panel className="popover-panel">
-                Menu content
+                <MenuItem appId="6" icon={<BsInfoSquare/>} name="Settings"/>
+                {/* TODO: Add browser app and link to github */}
+                <MenuItem appId="" icon={<IoSettingsOutline/>} name="About"/>
             </Popover.Panel>
         </Transition>
 
