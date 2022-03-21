@@ -1,12 +1,12 @@
 @layer components {
   .status-bar {
-    @apply bg-transparent h-10 top-0 w-[calc(100%-theme(width.28)+theme(padding.3))] md:w-[calc(100%-theme(width.64)+theme(padding.3))] py-0.5 pl-4 flex justify-between text-gray-300 dark:text-gray-400 antialiased font-semibold transition-none;
+    @apply absolute bg-transparent h-10 top-0 w-full pr-[theme(width.28)+theme(padding.3)] py-0.5 pl-4 flex justify-between text-gray-100 dark:text-gray-300 font-semibold transition-none;
 
     .status-bar-network-group {
       @apply select-none flex items-center;
 
       .icon {
-        @apply w-6 h-6 fill-transparent stroke-gray-300 stroke-1 dark:stroke-gray-400;
+        @apply w-6 h-6 fill-transparent stroke-1 stroke-gray-100 dark:stroke-gray-300 fill-gray-100 dark:fill-gray-300;
       }
     }
 
