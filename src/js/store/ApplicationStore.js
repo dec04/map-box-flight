@@ -4,7 +4,6 @@ import moment from "moment";
 import testNotifications from "../../../test_mocks/testNotifications";
 
 class ApplicationStore {
-
     alwaysOnTop = localStorage.alwaysOnTop;
     theme = localStorage.theme;
     currentTime = moment();
@@ -12,6 +11,7 @@ class ApplicationStore {
     isOnline = navigator.onLine;
     networkName = "Offline";
     notifications = testNotifications;
+    isOpenApp = false;
 
     constructor() {
         makeAutoObservable(this);
@@ -64,6 +64,11 @@ class ApplicationStore {
 
     makeNotificationRead(id) {
         this.notifications[id].isRead = true;
+    }
+
+    setOpenAppStatus(location) {
+        this.isOpenApp = location !== "/";
+        Log.d(`Current location: [${location}]`);
     }
 
 }

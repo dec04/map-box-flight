@@ -1,6 +1,6 @@
 @layer components {
   .status-bar {
-    @apply absolute bg-transparent h-10 top-0 w-full pr-[theme(width.28)+theme(padding.3)] py-0.5 pl-4 flex justify-between text-gray-100 dark:text-gray-300 font-semibold transition-none;
+    @apply absolute h-12 top-0 w-full pr-[theme(width.28)] md:pr-[theme(width.64)] py-0.5 pl-4 flex justify-between text-gray-100 dark:text-gray-300 transition-none text-sm;
 
     .status-bar-network-group {
       @apply select-none flex items-center;

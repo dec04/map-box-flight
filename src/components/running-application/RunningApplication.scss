@@ -1,5 +1,13 @@
 @layer components {
   .running-application {
-    @apply bg-gray-400 dark:bg-gray-600 px-4 py-14 pb-20 w-full h-full grow grid grid-flow-row auto-rows-max grid-cols-3 lg:grid-cols-4 gap-4;
+    @apply w-full h-full;
+
+    & > div {
+      @apply w-full h-full;
+    }
+
+    .application-workspace {
+      @apply bg-gray-300 dark:bg-gray-600 w-full h-full px-4 py-14 pb-20;
+    }
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import BottomMenu from "../bottom-menu/BottomMenu.jsx";
 import {useNavigate} from "react-router-dom";
+import appStore from "../../js/store/ApplicationStore";
 
 const NavBar = () => {
 
@@ -16,7 +17,9 @@ const NavBar = () => {
         navigate("/");
     };
 
-    return <div className="nav-bar">
+    let openAppGradient = "bg-gradient-to-t from-gray-500 dark:from-gray-800";
+
+    return <div className={`nav-bar ${appStore.isOpenApp && openAppGradient}`}>
         <button type="button" onClick={(e) => goBack(e)}>
             <svg xmlns="http://www.w3.org/2000/svg" className="icon" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7"/>

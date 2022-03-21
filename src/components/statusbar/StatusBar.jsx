@@ -20,8 +20,11 @@ const StatusBar = () => {
         checkInternetConnection();
     });
 
-    return <div className="status-bar">
-        <div className="status-bar-network-group">
+    let openAppGradient = "bg-gradient-to-b from-gray-500 dark:from-gray-800";
+
+    return <div className={`status-bar ${appStore.isOpenApp && openAppGradient}`}>
+        <div
+            className={`status-bar-network-group`}>
             {appStore.isOnline ? <BsWifi className="icon stroke-1 mr-2"/> :
                 <BsWifiOff className="icon stroke-1 mr-2"/>}
             <span>{appStore.networkName}</span>
