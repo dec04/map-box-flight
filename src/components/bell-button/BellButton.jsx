@@ -43,6 +43,7 @@ const BellButton = () => {
             leaveTo="transform scale-90 opacity-0">
             <Popover.Panel className="popover-panel">
                 Content bell notifications
+                Content bell notifications
             </Popover.Panel>
         </Transition>
 
