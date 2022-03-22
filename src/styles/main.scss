@@ -15,6 +15,7 @@
 @import "../components/application/Stonefellers.scss";
 @import "../components/application/Browser.scss";
 @import "../components/application/Settings.scss";
+@import "../components/application/TabContent.scss";
 @import "../components/application/Donut.scss";
 @import "../components/application/Notifications.scss";
 @import "../components/statusbar/StatusBar.scss";
@@ -28,10 +29,10 @@
 @import "../../node_modules/tailwindcss/utilities.css";
 
 html, body {
-  @apply bg-neutral-900 transition-all duration-300 ease-in-out will-change-transform overflow-hidden;
+  @apply bg-neutral-900 overflow-hidden;
 
-  * {
-    @apply transition-all duration-300 ease-in-out scroll-smooth;
+  *:not(svg, h1, h2, h3, h4, h5, h6, p) {
+    @apply transition-all duration-300 scroll-smooth;
     --animate-duration: 0.5s;
   }
 }
