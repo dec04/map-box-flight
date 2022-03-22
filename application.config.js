@@ -106,9 +106,9 @@ export class Config {
             url: "https://skyvector.com/"
         }, {
             id: 3,
-            name: "flightplandatabase",
+            name: "onlineflightplanner",
             color: "emerald",
-            url: "https://flightplandatabase.com/"
+            url: "http://onlineflightplanner.org/"
         }, {
             id: 4,
             name: "google",
