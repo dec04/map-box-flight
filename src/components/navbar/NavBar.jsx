@@ -1,6 +1,7 @@
 import React from "react";
 import BottomMenu from "../bottom-menu/BottomMenu.jsx";
 import {useNavigate} from "react-router-dom";
+import {observer} from "mobx-react";
 import appStore from "../../js/store/ApplicationStore";
 
 const NavBar = () => {
@@ -35,4 +36,4 @@ const NavBar = () => {
     </div>;
 };
 
-export default NavBar;
+export default observer(NavBar);

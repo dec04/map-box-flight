@@ -1,6 +1,6 @@
 @layer components {
   .nav-bar {
-    @apply absolute bottom-0 bg-transparent w-full h-16 px-4 py-0.5 flex justify-center text-gray-100 dark:text-gray-300 antialiased font-semibold transition-none;
+    @apply absolute rounded-md border-transparent bottom-0 bg-transparent w-full h-16 px-4 py-0.5 flex justify-center text-gray-100 dark:text-gray-300 antialiased font-semibold transition-none;
 
     button, a {
       @apply bg-transparent mx-4 text-center self-center;

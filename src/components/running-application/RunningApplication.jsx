@@ -1,10 +1,23 @@
-import React from "react";
-import {useParams} from "react-router-dom";
+import React, {useEffect} from "react";
+import {useNavigate, useParams} from "react-router-dom";
 import {Transition} from "@headlessui/react";
 import appStore from "../../js/store/ApplicationStore";
+import {observer} from "mobx-react";
+import {Config} from "../../../application.config";
+import Log from "../../js/Log";
 
 const RunningApplication = () => {
     let params = useParams();
+    let navigate = useNavigate();
+    let app;
+
+    useEffect(() => {
+        app = Config.applications.filter((el) => el.id === parseInt(params.id))[0];
+        if (app === undefined) {
+            navigate(`/`);
+        }
+        Log.d(`Open app: ${app.name}`);
+    });
 
     return <div className="running-application">
         <Transition
@@ -16,11 +29,9 @@ const RunningApplication = () => {
             leave="transition duration-300 ease-out"
             leaveFrom="opacity-100"
             leaveTo="opacity-0">
-            <div className="application-workspace">
-                Running application: [{params.id}]
-            </div>
+            {Config.applications.filter((el) => el.id === parseInt(params.id))[0]?.component}
         </Transition>
     </div>;
 };
 
-export default RunningApplication;
+export default observer(RunningApplication);

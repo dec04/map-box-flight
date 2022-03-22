@@ -7,7 +7,7 @@
     }
 
     .application-workspace {
-      @apply bg-gray-300 dark:bg-gray-600 w-full h-full px-4 py-14 pb-20;
+      @apply bg-gray-300 dark:bg-gray-600 w-full h-full px-4 py-14 pb-20 border rounded-md border-transparent;
     }
   }
 }

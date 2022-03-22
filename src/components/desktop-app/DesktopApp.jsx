@@ -27,6 +27,8 @@ const DesktopApp = (props) => {
                 return "app-icon-card bg-violet-600 dark:bg-violet-800";
             case "rose":
                 return "app-icon-card bg-rose-600 dark:bg-rose-800";
+            case "yellow":
+                return "app-icon-card bg-yellow-600 dark:bg-yellow-800";
             default:
                 return "app-icon-card bg-gray-600 dark:bg-gray-800";
         }
@@ -48,6 +50,8 @@ const DesktopApp = (props) => {
                 return "fill-violet-200 dark:fill-violet-400 stroke-violet-200 dark:stroke-violet-400";
             case "rose":
                 return "fill-rose-200 dark:fill-rose-400 stroke-rose-200 dark:stroke-rose-400";
+            case "yellow":
+                return "fill-yellow-200 dark:fill-yellow-400 stroke-yellow-200 dark:stroke-yellow-400";
             default:
                 return "fill-gray-200 dark:fill-gray-400 stroke-gray-200 dark:stroke-gray-400";
         }
@@ -67,7 +71,6 @@ const DesktopApp = (props) => {
             enterFrom="scale-0"
             enterTo="scale-110">
             <button onClick={(e) => handleClick(e)} className="app-icon-wrapper">
-                {/*<div className="app-icon-open-layer"/>*/}
                 <div className="app-icon-gradient"/>
                 <div className={makeCardColor()}>
                     <IconContext.Provider value={{className: makeIconColor()}}>

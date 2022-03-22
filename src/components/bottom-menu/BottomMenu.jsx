@@ -31,7 +31,7 @@ const BottomMenu = () => {
                 <Popover.Button>
                     <MenuItem appId="6" icon={<BsInfoSquare/>} name="Settings"/>
                     {/* TODO: Add browser app and link to github */}
-                    <MenuItem appId="" icon={<IoSettingsOutline/>} name="About"/>
+                    <MenuItem appId="7" icon={<IoSettingsOutline/>} name="About"/>
                 </Popover.Button>
             </Popover.Panel>
         </Transition>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Launcher from "../workspace/Workspace.jsx";
 import {Route, Routes, useLocation} from "react-router-dom";
 import RunningApplication from "../running-application/RunningApplication.jsx";
@@ -6,8 +6,15 @@ import RouteLayout from "../route-layout/RouteLayout.jsx";
 import appStore from "../../js/store/ApplicationStore";
 
 const Content = () => {
+
     const location = useLocation();
-    appStore.setOpenAppStatus(location.pathname);
+    const checkIsOpenApp = () => {
+        appStore.setOpenAppStatus(location.pathname);
+    };
+
+    useEffect(() => {
+        checkIsOpenApp();
+    });
 
     return <div className="content">
         <Routes>
