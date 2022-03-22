@@ -1,5 +1,4 @@
 import React from "react";
-import {useParams} from "react-router-dom";
 import {Tab} from "@headlessui/react";
 import {MdPerson} from "react-icons/md";
 import {BsDisplay} from "react-icons/bs";
@@ -8,7 +7,6 @@ import {IoSettingsOutline} from "react-icons/io5";
 import TabContent from "./TabContent.jsx";
 
 const Settings = () => {
-    let params = useParams();
 
     return <div className="settings">
         <Tab.Group>

@@ -93,6 +93,30 @@ export class Config {
         showOnMainScreen: false
     }];
 
+    static bookmarks = [
+        {
+            id: 1,
+            name: "youtube",
+            color: "red",
+            url: "https://www.youtube.com/"
+        }, {
+            id: 2,
+            name: "skyvector",
+            color: "blue",
+            url: "https://skyvector.com/"
+        }, {
+            id: 3,
+            name: "flightplandatabase",
+            color: "emerald",
+            url: "https://flightplandatabase.com/"
+        }, {
+            id: 4,
+            name: "google",
+            color: "amber",
+            url: "https://google.com/"
+        },
+    ];
+
     // Menu items
     // Settings open settings app
     // About open Browser app with link to github

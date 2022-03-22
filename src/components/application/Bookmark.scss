@@ -1,0 +1,9 @@
+@layer components {
+  .bookmark {
+    @apply py-2 px-4 h-full bg-gray-400 dark:bg-gray-500 border border-gray-300 dark:border-gray-400 rounded-md shadow-md flex justify-center items-center cursor-pointer hover:scale-110 active:scale-90 font-semibold text-white text-sm;
+
+    svg {
+      @apply ml-2;
+    }
+  }
+}

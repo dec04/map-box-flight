@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain, Notification} = require("electron");
+const {app, BrowserWindow, ipcMain, Notification, BrowserView} = require("electron");
 const path = require("path");
 const {Config} = require("../application.config");
 
@@ -29,6 +29,7 @@ const createWindow = () => {
             nodeIntegration: true,
             contextIsolation: false,
             enableRemoteModule: true,
+            webviewTag: true
         }
     });
 
