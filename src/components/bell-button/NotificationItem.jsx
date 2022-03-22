@@ -16,6 +16,10 @@ const NotificationItem = (props) => {
     return <div className="notification-item">
         <Link to={`/app/${props.appId}`} onClick={(e) => handleClick(e)} type="button">
             <div className="notification-header">
+                <span className={appStore.notifications[props.id].isRead ? "hidden" : "notification-warning-dot"}>
+                    <span className="warning-ping-ring"/>
+                    <span className="warning-ping-dot"/>
+                </span>
                 {desktopApp[0]?.icon ? desktopApp[0]?.icon : <BsInfoSquare/>}
                 {desktopApp[0]?.name ? desktopApp[0]?.name : "Information"}
             </div>

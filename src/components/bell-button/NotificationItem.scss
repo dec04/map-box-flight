@@ -14,7 +14,19 @@
       }
 
       .notification-header {
-        @apply text-xs w-full flex justify-start items-center;
+        @apply relative text-xs w-full flex justify-start items-center;
+
+        .notification-warning-dot {
+          @apply relative z-20 translate-x-0 mr-2 flex h-2 w-2;
+
+          .warning-ping-ring {
+            @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75;
+          }
+
+          .warning-ping-dot {
+            @apply relative inline-flex rounded-full h-2 w-2 bg-red-500;
+          }
+        }
       }
 
       .notification-body {

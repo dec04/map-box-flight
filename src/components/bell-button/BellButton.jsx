@@ -22,8 +22,7 @@ const BellButton = () => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0">
                     <span id="bell-ping" className="notification-warning-dot">
-                        <span
-                            className="warning-ping-ring"/>
+                        <span className="warning-ping-ring"/>
                         <span className="warning-ping-dot"/>
                     </span>
             </Transition>
