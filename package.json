@@ -2,7 +2,7 @@
   "name": "fly-one",
   "productName": "Fly One",
   "version": "0.0.1",
-  "description": "Career addon for flight simulators",
+  "description": "Ahyennii description",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
